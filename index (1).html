@@ -1,40 +1,95 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>रक्षा बंधन 2025</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Message</title>
 <style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle, #fff6f6, #ffe0ec);
-    overflow-y: auto;
-    overflow-x: hidden;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 10px 60px;
-  }
-  h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-top: 20px;
-    color: #e91e63;
-    text-shadow: 0 0 10px #e91e63, 0 0 20px #f06292, 0 0 30px #f48fb1;
-    animation: slideDown 1.5s ease-out, glow 2s ease-in-out infinite alternate;
-    max-width: 100%;
-  }
-  @keyframes slideDown {
-    0% {
-      transform: translateY(-50px);
-      opacity: 0;
+    body {
+        margin: 0;
+        padding: 0;
+        background: url('https://images.unsplash.com/photo-1505682634904-d7c8d95cdc50') no-repeat center center;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        overflow-y: auto;
+        color: white;
+        text-align: center;
     }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
+    .overlay {
+        background: rgba(0, 0, 0, 0.5);
+        min-height: 100vh;
+        padding: 20px;
     }
+    h1 {
+        animation: fadeInDown 2s ease;
+    }
+    @keyframes fadeInDown {
+        0% { opacity: 0; transform: translateY(-50px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    .message-box {
+        margin-top: 30px;
+        animation: fadeInUp 2s ease;
+    }
+    @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(50px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    input {
+        padding: 10px;
+        width: 80%;
+        max-width: 400px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+    button {
+        padding: 10px 20px;
+        background: #ff4081;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #f50057;
+    }
+    .footer {
+        margin-top: 50px;
+        font-size: 14px;
+        color: #ccc;
+    }
+</style>
+</head>
+<body>
+    <div class="overlay">
+        <h1>Special Message</h1>
+        <div class="message-box">
+            <input type="text" id="nameInput" placeholder="Please Enter your Name dear">
+            <button onclick="showMessage()">Show Message</button>
+            <p id="specialMessage" style="display:none; font-size: 18px; margin-top: 20px;"></p>
+        </div>
+        <div class="footer">
+            created by Shivam Upadhyay
+        </div>
+    </div>
+
+<script>
+    function showMessage() {
+        const name = document.getElementById('nameInput').value;
+        const messageBox = document.getElementById('specialMessage');
+        if(name.trim() === '') {
+            alert('Please enter your name first!');
+            return;
+        }
+        messageBox.innerHTML = `Happy Raksha Bandhan, ${name}! 💖`;
+        messageBox.style.display = 'block';
+    }
+</script>
+</body>
+</html>    }
   }
   @keyframes glow {
     from {
